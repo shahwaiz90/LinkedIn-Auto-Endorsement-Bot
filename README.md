@@ -1,4 +1,4 @@
-# Linkedin-Auto-Endorsement-Bot
+# LinkedIn-Auto-Endorsement-Bot
 A chrome extension to automatically endorse all your connection's skills.
 
 1 - Just import it as a chrome extension. You have to get logged in on LinkedIn.
