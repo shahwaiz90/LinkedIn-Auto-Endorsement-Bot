@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+
+  "name": "LinkedIn Bot",
+  "description": "This extension will endorse all the skills of your connections.",
+  "version": "1.0",
+   
+  "content_scripts": [
+    { "run_at" :"document_end",
+      "matches": ["https://www.linkedin.com/*"],	  
+      "js": ["jquery-1.11.3.min.js","script.js"]
+    }
+  ],
+  
+  "browser_action": {
+    "default_icon": "icon.png"
+  }
+}
