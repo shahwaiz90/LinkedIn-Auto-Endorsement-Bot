@@ -21,11 +21,11 @@ window.onload = function () {
     setInterval(function(){
         if(count == 2)
         {
-            console.log("--Initiating Bot--");
+            console.log("--Initiating Bot v5.0--");
             readJsonFile(); 
         }
         count++;
-   }, 5000); //Wait for all the libraries to load and check again after 5 seconds. (To be sure that you don't miss endorsing)
+   }, 15000);  //Wait for all the libraries to load and check again after 15 seconds. (To be sure that you don't miss endorsing)
 } 
 
 //Redirect Logic on first load.
@@ -49,7 +49,7 @@ function redirectLogic(){
 //Endorses all the skills, works only if the profile page is open.
 function endorseBot(){
         var listItems = $(".skills-section [class*='endorse-item has-endorsements endorsable'] .endorse-button, .skills-section [class*='endorse-item no-endorsements endorsable'] .endorse-button,.skills-section [class*='endorse-item no-endorsements extra-skill endorsable'] .endorse-button,.skills-section [class*='endorse-item has-endorsements extra-skill endorsable'] .endorse-button");
-        console.log("Total Skills: "+listItems.length);
+       // console.log("Total Skills: "+listItems.length);
         listItems.each(function(idx, li) {
             var product = $(li);  
             $(li)[0].click();                
@@ -76,7 +76,7 @@ function getParameterByName(name, url) {
 //Reads Json Response from Url
 function readJsonFile(){
    
-        //Manually change the values of start. Set start to 240, 480, 720 and so on each day. i.e 240 connections per day
+        //Manually change the values of start. Set start to 240, 480, 720 and so on each day.
         //Count is constant. As you wanted 240 connections per day.
         //You must be login on linkedin to access the results in the below link
     
