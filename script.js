@@ -1,5 +1,5 @@
 //Ahmad Shahwaiz
-//Script to inject endorsement in linkedin profile page.
+//Script to inject endorsement on LinkedIn profile page.
 //https://angel.co/ahmad-shahwaiz
 //Created 23/7/2016
 
@@ -32,14 +32,12 @@ window.onload = function () {
 function redirectLogic(){
         var indexNumber = getParameterByName("index"); 
         if (indexNumber == null){
-            
             //If URL has no index variable, then it will set the index to 0 and redirect to the profile link stored in the 0 index of array 'linkedinProfileUrls'
             indexNumber = 0;  
             redirectNextProfile(linkedinProfileUrls[indexNumber], indexNumber); 
 
         }
         else{
-            
             //If URL has index variable present then it means the profile page is already loaded and it will endrose all the skills and redirect to the next profile present in the next array index.
             endorseBot();  
             indexNumber++; 
@@ -50,12 +48,13 @@ function redirectLogic(){
 
 //Endorses all the skills, works only if the profile page is open.
 function endorseBot(){
-        var listItems = $(".skills-section [class*='endorse-item has-endorsements endorsable'] .endorse-button, .skills-section [class*='endorse-item no-endorsements endorsable'] .endorse-button");
+        var listItems = $(".skills-section [class*='endorse-item has-endorsements endorsable'] .endorse-button, .skills-section [class*='endorse-item no-endorsements endorsable'] .endorse-button,.skills-section [class*='endorse-item no-endorsements extra-skill endorsable'] .endorse-button,.skills-section [class*='endorse-item has-endorsements extra-skill endorsable'] .endorse-button");
+        console.log("Total Skills: "+listItems.length);
         listItems.each(function(idx, li) {
             var product = $(li);  
             $(li)[0].click();                
         });
-        console.log("Endrosed All Skills!");
+        console.log("--Endrosed All Skills!--");
 }
 
 //Redirecting to another Linkedin Profile
@@ -77,7 +76,7 @@ function getParameterByName(name, url) {
 //Reads Json Response from Url
 function readJsonFile(){
    
-        //Manually change the values of start. Set start to 240, 480, 720 and so on each day.
+        //Manually change the values of start. Set start to 240, 480, 720 and so on each day. i.e 240 connections per day
         //Count is constant. As you wanted 240 connections per day.
         //You must be login on linkedin to access the results in the below link
     
